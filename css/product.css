@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
+
+:root{
+   --purple:#8e44ad;
+   --red:#c0392b;
+   --orange:#f39c12;
+   --black:#333;
+   --white:#fff;
+   --light-color:#666;
+   --light-white:#ccc;
+   --light-bg:#f5f5f5;
+   --border:.1rem solid var(--black);
+   --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+*{
+   font-family: 'Rubik', sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+   transition:all .2s linear;
+}
+
+*::selection{
+   background-color: var(--purple);
+   color:var(--white);
+}
+
+*::-webkit-scrollbar{
+   height: .5rem;
+   width: 1rem;
+}
+
+*::-webkit-scrollbar-track{
+   background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb{
+   background-color: var(--purple);
+}
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+}
+
+ 
+/* Assuming each product box has a class "box" */
+.show-products .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    max-width: 1460px;
+    margin: 0 auto;
+  }
+  
+  .show-products .box {
+    width: calc(20% - 1.5rem); /* Display only four boxes in one row */
+    text-align: center;
+    display: flex;
+    padding:2rem;
+    flex-direction: column;
+    align-items: center; /* Center the content vertically */
+    border-radius: 0.5rem;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    background-color: var(--white);
+  }
+  
+  .show-products .box img {
+    height: 30rem;
+    width: 100%; /* Make sure the image takes the full width of the box */
+    object-fit: cover; /* Ensure the image maintains its aspect ratio */
+    border-radius: 0.5rem 0.5rem 0 0; /* Rounded corners only at the top */
+  }
+  .show-products .box img:hover{
+    transform: scale(1.1);
+  }
+  
+  .show-products .box .name {
+    padding: 1rem 0;
+    font-size: 2rem;
+    color: var(--black);
+  }
+  
+  .show-products .box-container .box .price{
+     
+    left:1rem;
+     
+    padding:1rem;
+    font-size: 2.5rem;
+    color:black;
+    text-decoration: line-through;
+     
+ }
+ 
+ .show-products .box-container .box .price_discount{
+     
+     
+    right:1rem;
+     
+    padding:1rem;
+    font-size: 3rem;
+    color:black;
+   
+ }
+ 
+ .show-products .box-container .box .discount_percent{
+  position: absolute;
+  /* top:1rem;
+  left:1rem; */
+  border-radius: .5rem;
+  padding:1rem;
+  font-size: 2.5rem;
+  color:var(--white);
+  background-color: var(--red);
+  margin-inline-start: -18rem;
+}
+  .buy-btn{
+    display: inline-block;
+margin-top: 1rem;
+padding: 1rem 3rem;
+cursor: pointer;
+color: var(--white);
+font-size: 1.8rem;
+border-radius: .5rem;
+text-transform: capitalize;
+  }
+
+  .white-btn, .buy-btn {
+    background-color: var(--purple);
+  }
+
+  .buy-btn:hover{
+    background-color: var(--black);
+  }
+
+
+  .top_product .box-container1{
+    display: grid;
+    grid-auto-columns: calc(20% - 1rem);
+    grid-auto-flow: column;
+    grid-gap: 12px;
+    overflow-x: auto;
+
+    
+  }
+
+  .top_product .box-container1 .box{
+    border-radius: 1.5rem;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    padding:1rem;
+    text-align: center;
+     
+    position: relative;
+    /* width: calc(20% - 1.5rem); */
+ }
+ 
+ .top_product .box-container1 .box .image{
+    height: 25rem;
+    width:100%;
+    border: none;
+ }
+ 
+ .top_product .box-container1 .box .image:hover{
+    transform: scale(1.1);
+  }
+ 
+ 
+  .top_product .box-container1 .box .name{
+    padding:1rem 0;
+    font-size: 1.5rem;
+    color:var(--black);
+    white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflowed content */
+  text-overflow: ellipsis;
+ }
+ 
+  
+ 
+ .top_product .box-container1 .box .price{
+      
+    left:1rem;
+    display: inline-block;
+    padding:1rem;
+    font-size: 2.5rem;
+    color:black;
+    text-decoration: line-through;
+     
+ }
+ 
+ .top_product .box-container1 .box .price_discount{
+     
+    display: inline-block;
+    right:1rem;
+     
+    padding:1rem;
+    font-size: 3rem;
+    color:black;
+   
+ }
+ 
+ .top_product .box-container1 .box .discount_percent{
+    position: absolute;
+    top:1rem;
+    left:1rem;
+    border-radius: .5rem;
+    padding:1rem;
+    font-size: 2.5rem;
+    color:var(--white);
+    background-color: var(--red);
+ }
+/* 
+  .top_product .box-container1 .box{
+    display:inline-block;
+  } */
+
+  /* .top_product .box-container1 .box .image{
+    margin-right:22px;
+  } */
+
+  /* Optional: If you want the boxes to take up the full width of the container when there are less than 4 boxes in a row */
+  @media (max-width: 960px) {
+    .show-products .box {
+      width: calc(50% - 1.5rem);
+      /* For two boxes in one row */
+    }
+
+    .header .header-1{
+      display: none;
+   }
+  }
+  
+  @media (max-width: 640px) {
+    .show-products .box {
+      width: calc(50% - 1.5rem);
+      /* For one box in one row */
+    }
+
+    .header .header-1 .flex{
+      
+      display: block;
+       
+       
+   }
+
+   .show-products .box-container .box .discount_percent {
+     font-size: 1.5rem;
+     margin-inline-start: -15rem;
+    }
+  }
+  
+  
